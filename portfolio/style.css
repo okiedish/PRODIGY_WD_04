@@ -1,0 +1,520 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0334, #121212);
+    color: #e0e0e0; /* Light gray text */
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Header */
+#header {
+    width: 100%;
+    height: auto; /* Adjusted height */
+    background-image: url("images/bgd-removebg-preview.png");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+}
+
+#header:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker overlay on hover */
+}
+
+.container {
+    padding: 50px 10%; /* Adjusted padding */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: rgba(148, 173, 222, 0.8); /* Dark semi-transparent background */
+    padding: 3px 0;
+    transition: background-color 0.3s ease;
+}
+
+nav:hover {
+    background-color: rgba(11, 2, 48, 0.9); /* Darker background on hover */
+}
+
+.logo {
+    width: 120px;
+    transition: transform 0.8s ease;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #f5f5f5; /* Light gray for contrast */
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #40d2c1; /* Light blue */
+    transform: scale(1.05);
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #0cb07c; /* Light blue */
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-text {
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header-text h1 {
+    font-size: 60px; /* Unified font size */
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(-20px); /* Initial position */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#header:hover .header-text h1 {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to original position */
+}
+
+.header-text h1 span {
+    color: #1c0f91; /* Light purple */
+    text-shadow: 
+    0 1px 0 #d0d0d0, /* Light gray for subtle depth */
+    0 2px 0 #b0b0b0, /* Slightly darker gray for additional depth */
+    0 3px 0 #909090, /* Medium gray for more pronounced shadow */
+    0 4px 1px rgba(0, 0, 0, 0.1), /* Light black for soft shadow */
+    0 6px 3px rgba(0, 0, 0, 0.2), /* Darker black for moderate shadow */
+    0 10px 5px rgba(0, 0, 0, 0.3), /* Stronger black for deeper shadow */
+    0 15px 10px rgba(0, 0, 0, 0.4); /* Deepest shadow for final effect */
+
+}
+
+/* About Section */
+#about {
+    padding: 50px 10%; /* Adjusted padding */
+    color: #e0e0e0; /* Light gray for readability */
+    background: linear-gradient(135deg, #0f0334, #121212);
+    transition: background-color 0.5s ease;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    transition: transform 0.3s ease;
+}
+
+.row:hover {
+    transform: scale(1.02);
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 8PX 8px 8px rgba(15, 98, 131, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-col-1 img:hover {
+    transform: scale(1.05);
+   
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.sub-title {
+    font-size: 60px; /* Unified font size */
+    font-weight: 600;
+    color: #64b5f6; /* Light blue */
+    transition: color 0.3s ease;
+}
+
+.tab-title {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    padding: 5px 10Px;
+    background: #333; /* Dark gray background */
+    color: #e0e0e0; /* Light gray text */
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+   
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.tab-links:hover {
+    background: #b7147b; /* Slightly lighter dark gray */
+    color: #ffffff; /* White text */
+    transform: scale(1.03);
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #64b5f6; /* Light blue */
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: width 0.3s ease;
+}
+
+.tab-links.active-link::after {
+    width: 100%;
+}
+
+.tab-contents {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.tab-contents.active-tab {
+    display: block;
+    opacity: 0.7;
+}
+
+/* Skills Section */
+#skills {
+    padding: 50px 10%; /* Adjusted padding */
+    color: #e0e0e0; /* Light gray for readability */
+    background: linear-gradient(135deg, #0f0334, #121212);
+    transition: background-color 0.5s ease;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-item {
+    flex: 10 30 20%; /* Adjusted width */
+    text-align: center;
+    padding: 20px;
+    background: #2a2a2a; /* Slightly lighter dark gray */
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+    background-color: #0b0956; /* Darker gray */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.skill-item i {
+    font-size: 50px; /* Adjust size as needed */
+    color: #64b5f6; /* Light blue */
+    transition: color 0.3s ease;
+}
+
+.skill-item:hover i {
+    color: #c32390; /* Light purple */
+}
+
+.skill-item p {
+    color: #f2e9e9; /* Light gray text */
+    margin-top: 10px;
+}
+
+/* Recent Work Section */
+#recent-work {
+    padding: 30px 10%; /* Adjusted padding */
+   
+    transition: background-color 0.5s ease;
+}
+
+.recent-work-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.recent-work-item {
+    flex: 1 1 20%; /* Adjusted width */
+    margin: 10px 0;
+    background: #2a2a2a; /* Slightly lighter dark gray */
+    padding: 12px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.5s ease;
+}
+
+.recent-work-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 8px rgba(33, 63, 184, 0.7);
+}
+
+.recent-work-item img {
+    width: 100%;
+    border-radius: 50px;
+    transition: transform 0.3s ease;
+}
+
+.recent-work-item img:hover {
+    transform: scale(0.9);
+}
+
+.recent-work-item h2 {
+    color: #64b5f6; /* Light blue */
+    transition: color 0.3s ease;
+}
+
+
+/* Contact Section */
+#contact {
+    background: linear-gradient(135deg, #0f0334, #121212);
+    padding: 50px 10%; /* Adjusted padding */
+    transition: background-color 0.5s ease;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    transition: opacity 0.5s ease;
+}
+
+form label {
+    display: block;
+    margin: 10px 0;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444; /* Dark border */
+    border-radius: 5px;
+    background: #333; /* Dark gray background */
+    color: #e0e0e0; /* Light gray text */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #64b5f6; /* Light blue */
+    background: #444; /* Slightly lighter dark gray */
+}
+
+form button {
+    background: #64b5f6; /* Light blue */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background: #0e9b40; /* Slightly darker blue */
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #fc2727; /* Dark background */
+    color: #e0e0e0; /* Light gray text */
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* General styles for the form response messages */
+.form-response {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.form-response .error {
+    color: #f44336; /* Red for errors */
+}
+
+.form-response .success {
+    color: #4caf50; /* Green for success */
+}
+
+/* Connect with Me Section */
+#socials {
+    padding: 50px 10%; /* Adjusted padding */
+  
+    background: linear-gradient(135deg, #0f0334, #121212);
+    transition: background-color 0.5s ease;
+}
+
+#socials .container {
+    max-width: 1200px; /* Optional: Limit the width for better layout */
+    margin: 0 auto; /* Center the container */
+}
+
+h1.sub-title {
+    font-size: 40px; /* Title font size */
+    font-weight: 600;
+    color: #64b5f6; /* Light blue color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensure borders don't double up */
+    margin: 0 auto;
+}
+
+thead th {
+    background: #333; /* Darker gray for header */
+    color: #e0e0e0; /* Light gray text */
+    padding: 10px;
+    text-align: left;
+}
+
+tbody td {
+    background: #2a2a2a; /* Slightly lighter dark gray */
+    color: #e0e0e0; /* Light gray text */
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle; /* Vertically center content */
+}
+
+tbody a {
+    color: #64b5f6; /* Light blue color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+tbody a:hover {
+    color: #bb86fc; /* Light purple on hover */
+}
+
+tbody img {
+    width: 30px; /* Set a fixed size for icons */
+    height: auto;
+}
+
+/* Hobbies Section */
+#hobbies {
+    padding: 50px 10%; /* Padding for the section */
+    background: linear-gradient(135deg, #0f0334, #121212);
+}
+
+#hobbies .container {
+    max-width: 1200px; /* Maximum width for the container */
+    margin: 0 auto; /* Center container */
+    
+    
+}
+
+h1.sub-title {
+    font-size: 40px; /* Title font size */
+    font-weight: 600;
+    color: #64b5f6; /* Light blue color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#hobbies p {
+    text-align: center;
+   
+    margin-bottom: 30px; /* Space between the paragraph and list */
+    font-size: 18px; /* Adjust text size */
+    color: #e0e0e0; /* Light gray color */
+}
+
+/* Flexbox for horizontal alignment of hobby items */
+#hobbies ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Align items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    gap: 20px; /* Space between items */
+    justify-content: center; /* Center items horizontally */
+}
+
+#hobbies li {
+    flex: 1 1 200px; /* Flex-grow, flex-shrink, and base width for each item */
+    display: flex; /* Align content within each item */
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within each item */
+    background: #2a2a2a; /* Background for each hobby item */
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#hobbies li:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: #333; /* Darker background on hover */
+    box-shadow: 0 10px 8px rgba(33, 63, 184, 0.7);
+}
+
+.hobby-image {
+    width: 100%; /* Ensure images fit within their container */
+    max-width: 150px; /* Limit image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#hobbies li:hover .hobby-image {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+#hobbies li p {
+    color: #e0e0e0; /* Light gray text */
+    margin-top: 10px;
+    font-size: 18px; /* Adjust text size */
+}
+
+

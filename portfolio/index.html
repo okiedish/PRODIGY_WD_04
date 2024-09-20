@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.0/tsparticles.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a0e4027e44.js" crossorigin="anonymous"></script>
+    <style>
+        html {
+            scroll-behavior: smooth; /* Add this for smooth scrolling */
+        }
+        .form-response {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+        .form-response .error {
+            color: red;
+        }
+        .form-response .success {
+            color: green;
+        }
+        /* Removed styles for Three.js canvas */
+    </style>
+</head>
+<body>
+    
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images\logoblue-removebg-preview.png" class="logo" alt="Logo">
+                <ul>
+                    <li><a href='#'>Home</a></li>
+                    <li><a href='#about'>About</a></li>
+                    <li><a href='#skills'>Skills</a></li>
+                    <li><a href='#Recent-work'>Recent Work</a></li>
+                    <li><a href='#contact'>Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Web Developer</p>
+                <h1>Hi, <span>I'm Disha Mandal</span><br>Bangalore, Karnataka</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images\89.jpg" alt="Disha Mandal">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I'm a motivated 1st-year student at East Point College of Engineering and Technology.
+                        I am dedicated and passionate about web development.
+                        I am proficient in C++, Python, Java, and have a basic understanding of Python.</p>
+                    <div class="tab-title">
+                        <p class="tab-links" onclick="opentab('Education', event)">Education</p>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>KV NO.2, DELHI</span><br>1-2</li>
+                            <li><span>KV MEG & CENTRE,BANGALORE</span><br>3-12</li>
+                            <li><span>EAST POINT COLLEGE OF ENGINEERING,BANGALORE</span><br>BE-CSE</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <div id="skills">
+        <div class="container">
+            <h1 class="sub-title">Skills</h1>
+            <div class="skills">
+                <div class="skill-item">
+                    <i class="fa-brands fa-html5"></i>
+                    <p>HTML</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <p>CSS</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-brands fa-python"></i>
+                    <p>Python</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-brands fa-java"></i>
+                    <p>Java</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Work -->
+    <div id="Recent-work">
+        <div class="container">
+            <h1 class="sub-title">Recent Work</h1>
+            <div class="recent-work-items">
+                <div class="recent-work-item">
+                    <img src="images/calcipic.jpg" alt="SIMPLE CALCULATOR">
+                    <h2>SIMPLE CALCULATOR</h2>
+                    <p>Developed this calculator utilizing HTML, CSS, and JavaScript</p>
+                </div>
+                <div class="recent-work-item">
+                    <img src="" alt="Project 2">
+                    <h2>Project 2</h2>
+                    <p>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact">
+        <div class="container">
+            <h1 class="sub-title">Contact Me</h1>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="form-response" class="form-response"></div>
+        </div>
+    </div>
+    
+    <!-- Socials -->
+    <div id="socials">
+        <div class="container">
+            <h1 class="sub-title">Connect with Me</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Link</th>
+                        <th>Logo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LinkedIn</td>
+                        <td><a href="https://www.linkedin.com/in/disha-mandal-4770202a/" target="linkedin">linkedin.com/in/myprofile</a></td>
+                        <td><img src="images\unnamed.png" alt="LinkedIn"></td>
+                    </tr>
+                    <tr>
+                        <td>GitHub</td>
+                        <td><a href="https://github.com/okiedish" target="github">github.com/myprofile</a></td>
+                        <td><img src="images\images.png" alt="GitHub"></td>
+                    </tr>
+                    <tr>
+                        <td>Twitter</td>
+                        <td><a href="https://x.com/okiedish" target="_blank">twitter.com/myprofile</a></td>
+                        <td><img src="images\images (1).png"" alt="Twitter"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Hobbies -->
+    <div id="hobbies">
+        <div class="container">
+            <h1 class="sub-title">Hobbies</h1>
+            <p>Here are some of my hobbies and interests:</p>
+            <ul>
+                <li>
+                    <img src="images\photy.jpg"  alt="Photography" class="hobby-image">
+                    Photography
+                </li>
+                <li>
+                    <img src="images\travh.jpg" alt="Traveling" class="hobby-image">
+                    Traveling
+                </li>
+                <li>
+                    <img src="images\cooking.jpg"alt="Cooking" class="hobby-image">
+                    Cooking
+                </li>
+                <li>
+                    <img src="images\reading.jpg" alt="Reading" class="hobby-image">
+                    Reading
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> DISHA MANDAL. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function opentab(tabname, event) {
+            const tablinks = document.getElementsByClassName("tab-links");
+            const tabcontents = document.getElementsByClassName("tab-contents");
+
+            // Get the ID of the content to be shown/hidden
+            const clickedTabContent = document.getElementById(tabname);
+            const isActive = event.currentTarget.classList.contains("active-link");
+
+            // Remove active class from all tab links and contents
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+
+            // If the clicked tab was not active, show the content
+            if (!isActive) {
+                event.currentTarget.classList.add("active-link");
+                clickedTabContent.classList.add("active-tab");
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent actual form submission
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const responseDiv = document.getElementById('form-response');
+
+            if (name && email && message) {
+                responseDiv.innerHTML = '<p class="success">Thank you for your message!</p>';
+            } else {
+                responseDiv.innerHTML = '<p class="error">Please fill in all fields.</p>';
+            }
+        });
+
+        // Display current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
